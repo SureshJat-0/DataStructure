@@ -14,10 +14,16 @@ class node {
 
 class LL {
     node head;
+    private int size;
+
+    LL() {
+        this.size = 0;
+    }
 
     // Add first, last 
     public void addFirst(String data) {
         node newNode = new node(data);
+        size++;
         if (head == null) {
             head = newNode;
             return;
@@ -29,6 +35,7 @@ class LL {
 
     public void addLast(String data) {
         node newNode = new node(data);
+        size++;
         if (head == null) {
             head = newNode;
             return;
@@ -51,6 +58,42 @@ class LL {
         }
         System.out.println("null");
     }
+
+    // Delete in Link List - first, last
+    public void deleteFirst() {
+        size--;
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        head = head.next;
+    }
+
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        size--;
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        node lastNode = head.next;
+        node secLastNode = head;
+
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
+            secLastNode = secLastNode.next;
+        }
+        secLastNode.next = null;
+        
+    }
+
+    public int returnSize() {
+        return size;
+    }
 }
 
 public class Link_LIst {
@@ -62,6 +105,14 @@ public class Link_LIst {
         list.printList();
         list.addLast("Link");
         list.addLast("List");
+        System.out.println(list.returnSize());
         list.printList();
+        list.deleteFirst();
+        list.printList();
+        list.deleteLast();
+        list.printList();
+        list.deleteLast();
+        list.printList();
+        System.out.println(list.returnSize());
     }
 }
