@@ -1,6 +1,3 @@
-// Reverse Link List Iterativaly 
-// Line no : 38
-
 package List;
 
 class Node {
@@ -16,28 +13,9 @@ class Node {
 class LL {
     Node head;
 
-    public void addFirst(int data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-            return;
-        }
-        newNode.next = head;
-        head = newNode;
-    }
-
-    public void printList() {
-        Node currNode = head;
-        while (currNode != null) {
-            System.out.print(currNode.data + " -> ");
-            currNode = currNode.next;
-        }
-        System.out.println("null");
-    }
-
     // --> Reverse Link List Iterativaly <--
 
-    public void reverseListIterativly() {
+    public void reverseLLIterative() {
         if (head == null || head.next == null) {
             return;
         }
@@ -59,23 +37,44 @@ class LL {
 
     // --> Link List reverse Recursivaly <-- 
 
-    public void reverseLLRecursivaly() {
+    public Node reverseLLRecursive(Node head) {
+        // Base case: if the list is empty or has one element, return the head
+        if (head == null || head.next == null) {
+            return head;
+        }
 
+        // Recur for the rest of the list
+        Node newHead = reverseLLRecursive(head.next);
+
+        // Reverse the current node
+        System.out.println("Reversing: " + head.data);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
     }
 
+    public void printList() {
+        Node currNode = head;
+        while (currNode != null) {
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
+        }
+        System.out.println("null");
+    }
 }
 
 public class LLRevese {
     public static void main(String[] args) {
         LL list = new LL();
-
-        list.addFirst(4);
-        list.addFirst(3);
-        list.addFirst(2);
-        list.addFirst(1);
+        
+        list.head = new Node(1);
+        list.head.next = new Node(2);
+        list.head.next.next = new Node(3);
+        list.head.next.next.next = new Node(4);
 
         list.printList();
-        list.reverseListIterativly();
+        list.head = list.reverseLLRecursive(list.head);
         list.printList();
     }
 }
