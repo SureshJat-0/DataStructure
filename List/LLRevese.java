@@ -1,7 +1,8 @@
 // Reverse Link List Iterativaly 
-// Line no : 36
+// Line no : 38
 
 package List;
+
 class Node {
     public int data;
     public Node next;
@@ -14,6 +15,7 @@ class Node {
 
 class LL {
     Node head;
+
     public void addFirst(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -33,32 +35,37 @@ class LL {
         System.out.println("null");
     }
 
-    // --> Reverse Link List Iterativaly <-- 
+    // --> Reverse Link List Iterativaly <--
 
     public void reverseListIterativly() {
-
         if (head == null || head.next == null) {
             return;
         }
 
         Node prevNode = head;
-        Node curNode = head.next;
+        Node currNode = head.next;
 
-        while (curNode != null) {
-            Node nextNode = curNode.next;
-            curNode.next = prevNode;
+        while (currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
 
-            // Update 
-            prevNode = curNode;
-            curNode = nextNode;
+            // Update
+            prevNode = currNode;
+            currNode = nextNode;
         }
         head.next = null;
         head = prevNode;
     }
+
+    // --> Link List reverse Recursivaly <-- 
+
+    public void reverseLLRecursivaly() {
+
+    }
+
 }
 
-
-public class LLReveseIterative {
+public class LLRevese {
     public static void main(String[] args) {
         LL list = new LL();
 
