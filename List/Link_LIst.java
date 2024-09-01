@@ -113,6 +113,7 @@ public class Link_LIst {
         list.printList();
         list.deleteLast();
         list.printList();
+        
         System.out.println(list.returnSize());
     }
 }

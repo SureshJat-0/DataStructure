@@ -47,7 +47,6 @@ class LL {
         Node newHead = reverseLLRecursive(head.next);
 
         // Reverse the current node
-        System.out.println("Reversing: " + head.data);
         head.next.next = head;
         head.next = null;
 
@@ -74,6 +73,7 @@ public class LLRevese {
         list.head.next.next.next = new Node(4);
 
         list.printList();
+        // list.reverseLLIterative();
         list.head = list.reverseLLRecursive(list.head);
         list.printList();
     }
