@@ -96,7 +96,7 @@ class LL {
     }
 }
 
-public class Link_LIst {
+public class Linked_List {
 
     public static void main(String[] args) {
         LL list = new LL();

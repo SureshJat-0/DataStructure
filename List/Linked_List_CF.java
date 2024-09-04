@@ -2,7 +2,7 @@ package List;
 
 import java.util.LinkedList;
 
-public class Link_List_CF {
+public class Linked_List_CF {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
 
