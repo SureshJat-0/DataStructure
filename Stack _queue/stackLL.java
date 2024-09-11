@@ -42,7 +42,7 @@ class StackDS {
     }
 }
 
-public class stack {
+public class stackLL {
     public static void main(String[] args) {
         StackDS stk = new StackDS();
         stk.push(1);
