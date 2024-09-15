@@ -2,18 +2,18 @@
 
 package List;
 
-class node {
+class LNode {
     String data;
-    node next;
+    LNode next;
 
-    public node(String data) {
+    public LNode(String data) {
         this.data = data;
         this.next = null;
     }
 }
 
 class LL {
-    node head;
+    LNode head;
     private int size;
 
     LL() {
@@ -22,7 +22,7 @@ class LL {
 
     // Add first, last 
     public void addFirst(String data) {
-        node newNode = new node(data);
+        LNode newNode = new LNode(data);
         size++;
         if (head == null) {
             head = newNode;
@@ -34,14 +34,14 @@ class LL {
     }
 
     public void addLast(String data) {
-        node newNode = new node(data);
+        LNode newNode = new LNode(data);
         size++;
         if (head == null) {
             head = newNode;
             return;
         }
 
-        node currNode = head;
+        LNode currNode = head;
         while (currNode.next != null) {
             currNode = currNode.next;
         }
@@ -51,7 +51,7 @@ class LL {
 
     // Print link list 
     public void printList() {
-        node currNode = head;
+        LNode currNode = head;
         while (currNode != null) {
             System.out.print(currNode.data + " -> ");
             currNode = currNode.next;
@@ -80,8 +80,8 @@ class LL {
             return;
         }
 
-        node lastNode = head.next;
-        node secLastNode = head;
+        LNode lastNode = head.next;
+        LNode secLastNode = head;
 
         while (lastNode.next != null) {
             lastNode = lastNode.next;
