@@ -1,7 +1,5 @@
 // Binary Search Tree makes search efficient
-
 public class BinarySearchTree {
-
     static class Node {
         int data;
         Node left;
@@ -13,7 +11,6 @@ public class BinarySearchTree {
             this.right = null;
         }
     }
-
     // Insert in BST 
     public static Node insert(Node root, int val) {
         if (root == null) {
@@ -29,7 +26,6 @@ public class BinarySearchTree {
 
         return root;
     }
-
     // Inorder traversal in BST --> which gives shorted data 
     public static void inorder(Node root) {
         if (root == null) {
@@ -39,7 +35,6 @@ public class BinarySearchTree {
         System.out.print(root.data + " ");
         inorder(root.right);
     }
-
     // search in BST --> Time complexity O(H) , where H = height of tree 
     public static boolean search(Node root, int key) {
         if (root == null) {
