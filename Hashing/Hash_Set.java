@@ -36,6 +36,7 @@ public class Hash_Set {
         System.out.println();
 
         // Iterator
+        @SuppressWarnings("rawtypes")
         Iterator It = set.iterator();
 
         while (It.hasNext()) { // It makes no guarantees as to the iteration order of the set

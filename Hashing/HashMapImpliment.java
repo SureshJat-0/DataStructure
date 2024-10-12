@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.ArrayList;
 
-public class HashMapImplimen {
+public class HashMapImpliment {
 
     static class HashMap<k, v> { // generics
 
