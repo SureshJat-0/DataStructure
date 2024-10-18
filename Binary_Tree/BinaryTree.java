@@ -104,6 +104,5 @@ public class BinaryTree {
         System.out.println();
         tree.postorder(root);
         System.out.println();
-        tree.levelOrder(root);
     }
 }
